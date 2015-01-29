@@ -45,7 +45,7 @@ button {
 </style>
 
 <!-- Local Storage -->
-<script>
+<script type="text/javascript">
 function storeValue() {
   var lastName = document.getElementById("lastname").value;
   
@@ -55,6 +55,27 @@ function storeValue() {
   // Retrieve
   document.getElementById("result").innerHTML = "Your last name is " + lastName;
 }
+
+// local storage test
+function lsTest(){ 
+    var test = 'test';
+    try {
+      localStorage.setItem(test, test);
+      localStorage.removeItem(test);
+      return true;
+    } catch(e) {
+      return false;
+    }
+}
+
+var elem = document.getElementById('status');
+
+if(lsTest() === true){
+    elem.innerHTML += 'available.';
+}else{
+    elem.innerHTML += 'unavailable.';   
+}
+
 </script>
 
     </head>
@@ -64,6 +85,8 @@ function storeValue() {
 			<input id="lastname" placeholder="Enter Last Name">
 			<button onclick="storeValue()">Store Last Name</button>
 			<div id="result"></div>
+			<h3>Test if locale storage is available</h3>
+			<div id="status">Local Storage is </div>
 		</section>
 		
     </body>
