@@ -43,6 +43,20 @@ button {
 }
 
 </style>
+
+<!-- Local Storage -->
+<script>
+function storeValue() {
+  var lastName = document.getElementById("lastname").value;
+  
+  // Store
+  localStorage.lastname = lastName;
+  
+  // Retrieve
+  document.getElementById("result").innerHTML = "Your last name is " + lastName;
+}
+</script>
+
     </head>
     <body>
     
