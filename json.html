@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+<script>
+var first = document.getElementById('first').value;
+
+var text = '{"students":[' +
+'{"firstName": "Brendan","lastName":"Skousen" },' +
+'{"firstName":"Amy","lastName":"Norman" },' +
+'{"firstName":"Crystal","lastName":"Coatney" }]}';
+
+obj = JSON.parse(text);
+
+for (i=0; i< obj.length; i++) {
+function findName() {
+document.getElementById("student-name").innerHTML =
+obj.students[i].firstName + " " + obj.students[i].lastName;
+
+i++
+}
+
+
+}
+</script>
+	</head>
+	<body>
+	
+<h2>Create Object from JSON String and loop through array</h2>
+<button onclick="findName()">Click until you see your name</button>
+
+<p id="student-name"></p>
+	
+	</body>
+</html>
